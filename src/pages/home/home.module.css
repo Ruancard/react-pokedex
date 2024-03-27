@@ -7,9 +7,11 @@ header{
      display: flex;
      flex-direction: column;
      gap: 1vh;
-     margin: 20px 5px;
+     width: 95vw;
+     margin: 20px 2.5vw;
 }
 header input{
+     line-height: 20px;
      border-radius: 10px;
      color: #e6e6e6;
      background-color: #232323;
@@ -18,6 +20,7 @@ header input{
      display: flex;
      gap: 0.5vw;
      overflow-x: auto;
+     scrollbar-color: #232323 transparent;
 }
 .types button{
      border-radius: 30px;

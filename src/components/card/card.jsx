@@ -9,7 +9,7 @@ const card = (props) => {
           </div>
           <div className={styles.descricao}>
                <h1>{props.nome}</h1>
-                {props.tipos.length != 0 ? <div className= {`types ${styles.types}`} >{props.tipos.map((tipo) => (<button id={tipo.type.name}>{tipo.type.name}</button>))} </div>: <h4>nenhum tipo disponivel</h4>}
+                {props.tipos.length != 0 ? <div className= {`types ${styles.types}`} >{props.tipos.map((tipo) => (<button id={tipo.type.name} >{tipo.type.name}</button>))} </div>: <h4>nenhum tipo disponivel</h4>}
           </div>
     </Link>
   )

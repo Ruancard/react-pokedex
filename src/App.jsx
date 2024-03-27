@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // importing hooks
 // import { useAuth } from './hooks/useAuth';
@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // importing pages
 import Home from './pages/home/home';
+import Pokemon from './pages/pokemon/pokemon';
 
 function App() {
   const [pokemonData, setPokemonData] = useState();
@@ -17,7 +18,8 @@ function App() {
       <BrowserRouter>
         <div className='container'>
         <Routes>
-          < Route path='/' element={< Home />} />          
+          < Route path='/' element={< Home />} />
+          < Route path='/pokemon/:id' element={< Pokemon />} />            
         </Routes>
         </div>
       </BrowserRouter>
