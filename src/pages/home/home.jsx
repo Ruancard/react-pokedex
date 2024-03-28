@@ -5,7 +5,6 @@ import Card from '../../components/card/card'
 
 
  const Home = (setPokemonData) => {
-  var types = [];
   
   const [pokemons, setPokemons] = useState([]);
   const [tipos, setTipos] = useState([]);
@@ -38,14 +37,20 @@ import Card from '../../components/card/card'
 
   function arrayCompare(first, last)
 {
-    var result = first.filter(function(item){ return last.indexOf(item) > -1});   
-    return result.length;  
+    var result = (0);
+    first.map((f) => {
+      for( var n in last){
+        if(last[n] == f) {result ++} 
+      }
+    });
+    console.log(`result = ${result}`)
+    console.log(first.length)   
+    return result;  
 }   
 
 const pokemonFilterbytype = (type) => {
     var types = [];
     tipos.map((t) =>(types.push(t)))
-    console.log(types)
       if (tipos.includes(type)){
         delete types[tipos.indexOf(type)]
         types = types.filter(function (i) {
@@ -56,7 +61,7 @@ const pokemonFilterbytype = (type) => {
       else{
         types.push(type)
         setTipos(types);
-      }
+      } 
     var filteredPokemonsbytype = [];
     if (types.length == 0 || types[0] == null) {
       getPokemons();
@@ -66,7 +71,7 @@ const pokemonFilterbytype = (type) => {
       pokemon.data.types.map((tipo) => {
         ti.push(tipo.type.name)
       });
-      if(arrayCompare(types, ti) === types.length || types[arrayCompare(types, ti)] == null){
+      if(arrayCompare(types, ti) == types.length ){
         if(!filteredPokemonsbytype.includes(pokemon))
           {filteredPokemonsbytype.push(pokemon)}        
       }
